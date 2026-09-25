@@ -1,61 +1,29 @@
-<div class="eyebrow">UCD · PET detector research · Shared introduction</div>
+# PET detector simulation and analysis
 
-# Find the interaction.<br>Understand the uncertainty.
+This guide is for final-year undergraduate physics students working with Dr James Keaveney at University College Dublin. It covers the simulated response of a scintillator-based PET detector module to 511 keV gamma radiation, including scintillation, optical transport, detected light and interaction-position reconstruction.
 
-<p class="intro">A gamma ray leaves a pattern of light. Learn how that pattern can tell us where it interacted—and how precisely we know.</p>
+The current practicals use supplied datasets and research scripts to introduce the analysis. Instructions for running new simulations and training models will be developed separately; the [later workflows](later.md) describe their requirements and current limitations.
 
-This guide introduces **picoPET module simulation and “3D chess”**, the CNN used to infer a three-dimensional interaction position from an 8 × 8 light map. It is written for final-year physics students joining Dr James Keaveney’s research project.
+## Contents
 
-**Start with existing data.** You will inspect feature CSVs, evaluate saved CNN predictions, and interpret the resulting plots using the research scripts. A CPU is sufficient for these compact exercises; training, new simulation and cluster access come later.
+- [Detector model and light sharing](learn/detector.md): module geometry, scintillation and the distribution of detected light across 64 channels.
+- [Coordinates and simulation truth](learn/coordinates.md): position and energy definitions, truth selection and retained events.
+- [Local practicals](practicals/setup.md): Python environment setup, inspection of the supplied data and analysis of light-response distributions.
+- [Position reconstruction](learn/model.md): estimating interaction position from an 8 × 8 light map using a convolutional neural network, and interpreting its predicted probability distributions.
+- [Prediction analysis](practicals/predictions.md): residual bias and spread, uncertainty estimates, event selections and comparisons of estimators.
 
-<div class="route-grid" markdown>
-<div class="route-card" markdown>
-<span class="step">01 / UNDERSTAND</span>
-### Meet the detector
-Connect scintillation, light sharing and depth of interaction to the measured 64-channel map.
+## Getting started
 
-[Read the detector introduction →](learn/detector.md)
-</div>
-<div class="route-card" markdown>
-<span class="step">02 / GET A FIRST RESULT</span>
-### Work with a real CSV
-Set up the local environment, check the input data and generate the first validation gallery.
+Read the detector and coordinate definitions, then complete these practicals in order:
 
-[Begin local setup →](practicals/setup.md)
-</div>
-<div class="route-card" markdown>
-<span class="step">03 / INTERPRET</span>
-### Evaluate saved predictions
-Distinguish residual bias, spread and uncertainty. Compare ways to summarise the same predicted density.
+1. [Set up the Python environment](practicals/setup.md).
+2. [Inspect a light map and check the input data](practicals/features.md).
+3. [Analyse the light-response and interaction-depth distributions](practicals/validation.md).
 
-[Explore saved predictions →](practicals/predictions.md)
-</div>
-<div class="route-card" markdown>
-<span class="step">04 / INVESTIGATE</span>
-### Explore simulation and analysis
-Complete the common route, then learn what is needed to generate new simulated data and analyse the module response.
+These exercises run on a CPU using the supplied CSV files. They do not require a GPU, cluster access or a new simulation. Record the input file, command, software environment and output directory for each calculation, together with your interpretation of the results.
 
-[Explore later workflows →](later.md)
-</div>
-</div>
+## Scripts, data and limitations
 
-## What you should be able to explain
+The practicals use the scripts in `project/hpc-15-07/`. The [data and script map](reference/data.md) identifies the inputs and entry points; the [example data checks](reference/data-checks.md) describe expected values and fit limitations.
 
-- How an interaction produces a light map, and why the map may contain depth information.
-- What the simulation truth label actually records.
-- How a conditional density differs from a single predicted position.
-- Why a narrow fitted residual core is only one part of performance.
-- What is traded away when selecting events with small predicted uncertainty.
-
-## Your first session
-
-Read [detector and light sharing](learn/detector.md) and [coordinates and truth](learn/coordinates.md). Follow [setup](practicals/setup.md), [read a light map](practicals/features.md), then [validate the distributions](practicals/validation.md). Keep a short notebook recording the command, input identity, output folder and your interpretation of one plot.
-
-!!! note "A successful procedure is not a certified physics result"
-    The supplied small datasets are independent historical examples with incomplete producing configurations. They are useful for checking procedures and learning interpretation. They do not establish production detector performance, PET image resolution or a validated clinical system.
-
-## Research scope
-
-All practical calculations use the research scripts in `project/hpc-15-07/`. The [example data checks](reference/data-checks.md) describe the teaching inputs and their limitations. The [project status](reference/status.md) lists open questions for the student investigations.
-
-Distinguish what the code implements, what a particular dataset shows and what remains a hypothesis. Training, new-input inference and cluster simulation require additional preparation; see [later extensions](later.md).
+The supplied datasets are small examples from earlier work, with incomplete simulation and training configurations. They support learning the analysis procedures, but do not establish detector performance. Check event selections and fit-success flags before interpreting a result. Outstanding requirements are listed in [project status](reference/status.md).
