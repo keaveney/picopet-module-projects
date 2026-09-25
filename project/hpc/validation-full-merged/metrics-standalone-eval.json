@@ -1,0 +1,149 @@
+{
+  "mode": "validation_only",
+  "true_z_distribution": {
+    "n": 6280838,
+    "z_source": "z_gamma",
+    "mean_mm": -2.092790705321783,
+    "median_mm": -3.0154003426593468,
+    "std_mm": 4.132061760300271,
+    "p05_mm": -7.191120867941136,
+    "p95_mm": 5.805202049247594
+  },
+  "total_pe_energy_spectrum": {
+    "pe_column": "total_pe",
+    "n": 6280838,
+    "min": 1.0,
+    "max": 1470.0,
+    "mean": 801.128428244766,
+    "fit_ok": true,
+    "fit_reason": "ok",
+    "fit_model": "gauss-linear",
+    "x_scale": 1.0,
+    "feature_annotations": [],
+    "mode": 1130.0625,
+    "fit_window": [
+      927.9375,
+      1405.6875
+    ],
+    "fit_low_fraction": 0.18,
+    "fit_high_fraction": 0.25,
+    "gauss_mean": 1125.6129685982005,
+    "gauss_sigma": 57.96818381455921,
+    "gauss_fwhm": 136.51507288328693,
+    "energy_resolution_percent": 12.128065035826488
+  },
+  "total_visible_energy_spectrum": {
+    "pe_column": "total_pe",
+    "n": 6280838,
+    "min": 1.0,
+    "max": 1470.0,
+    "mean": 801.128428244766,
+    "fit_ok": true,
+    "fit_reason": "ok",
+    "fit_model": "gauss-linear",
+    "x_scale": 0.4521873790166473,
+    "feature_annotations": [
+      {
+        "x": 180.0,
+        "label": "Klein-Nishina Maximum @ 180 keV"
+      },
+      {
+        "x": 511.0,
+        "label": "Photopeak @ 511 keV"
+      }
+    ],
+    "mode": 1130.0625,
+    "fit_window": [
+      927.9375,
+      1405.6875
+    ],
+    "fit_low_fraction": 0.18,
+    "fit_high_fraction": 0.25,
+    "gauss_mean": 1125.6129685982005,
+    "gauss_sigma": 57.96818381455921,
+    "gauss_fwhm": 136.51507288328693,
+    "energy_resolution_percent": 12.128065035826488
+  },
+  "max_pixel_pe_spectrum": {
+    "pe_column": "max_pe",
+    "n": 6280838,
+    "min": 1.0,
+    "max": 951.0,
+    "mean": 402.14175305906633,
+    "fit_ok": false,
+    "fit_reason": "fit disabled",
+    "fit_model": "none",
+    "x_scale": 1.0,
+    "feature_annotations": [
+      {
+        "x": 400.0,
+        "label": "Compton Edge"
+      },
+      {
+        "x": 220.0,
+        "label": "Klein-Nishina Maximum"
+      },
+      {
+        "x": 600.0,
+        "label": "Photopeak"
+      }
+    ],
+    "mode": 588.43125
+  },
+  "max_pixel_visible_energy_spectrum": {
+    "pe_column": "max_pe",
+    "n": 6280838,
+    "min": 1.0,
+    "max": 951.0,
+    "mean": 402.14175305906633,
+    "fit_ok": false,
+    "fit_reason": "fit disabled",
+    "fit_model": "none",
+    "x_scale": 0.868410710682004,
+    "feature_annotations": [
+      {
+        "x": 340.7,
+        "label": "Compton Edge @ 341 keV"
+      },
+      {
+        "x": 179.99999999999997,
+        "label": "Klein-Nishina Maximum @ 180 keV"
+      },
+      {
+        "x": 510.99999999999994,
+        "label": "Photopeak @ 511 keV"
+      }
+    ],
+    "mode": 588.43125
+  },
+  "gamma_first_interaction_depth_validation": {
+    "n_selected": 2612828,
+    "z_source": "z_gamma",
+    "z_front_mm": -7.5,
+    "pixel_length_mm": 15.0,
+    "energy_selection": "$|E_\\gamma - 511\\,\\mathrm{keV}| < 1\\,\\mathrm{keV}$",
+    "n_energy_window": 2612828,
+    "angle_model": "uniform solid-angle cone average",
+    "cone_half_angle_deg": 2.224822159525326,
+    "source_radius_mm": 13.0,
+    "source_distance_cm": 20.0,
+    "cone_margin": 0.3,
+    "mean_cos_theta": 0.999623095973673,
+    "min_cos_theta": 0.9992501180309534,
+    "max_cos_theta": 0.9999960739163924,
+    "mean_depth_mm": 6.1327914935670895,
+    "fit_ok": true,
+    "fit_reason": "ok",
+    "mu_per_mm": 0.07439080330319812,
+    "attenuation_length_mm": 13.442521865562503
+  },
+  "gamma_incident_angle_distribution": {
+    "n": 6280838,
+    "mean_deg": 13.998222294419646,
+    "median_deg": 1.7667647998691716,
+    "std_deg": 25.644238078422458,
+    "p95_deg": 78.52886592575787,
+    "max_deg": 89.99995043690437
+  },
+  "html_report": "validation-full-merged/index.html"
+}

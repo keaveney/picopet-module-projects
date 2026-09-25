@@ -1,0 +1,27 @@
+# Publish only the website source, research materials and selected utilities.
+# New top-level files and folders stay local until explicitly included here.
+/*
+!/.gitignore
+!/README.md
+!/mkdocs.yml
+!/requirements-docs.txt
+!/docs/
+!/project/
+!/tools/
+!/.github/
+
+/tools/*
+!/tools/check_site.py
+!/tools/make_diagrams.py
+!/tools/make_teaching_figures.py
+
+# Local environments, editor files and generated student outputs.
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv*/
+.mpl-cache/
+.env
+.env.*
+student-runs/

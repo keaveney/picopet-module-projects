@@ -1,0 +1,60 @@
+site_name: picoPET · Student guide
+site_url: https://keaveney.github.io/picopet-module-projects/
+repo_url: https://github.com/keaveney/picopet-module-projects
+repo_name: keaveney/picopet-module-projects
+edit_uri: edit/main/docs/
+site_description: A practical introduction to PET detector light maps, depth reconstruction and uncertainty.
+site_author: Dr James Keaveney · University College Dublin
+use_directory_urls: false
+theme:
+  name: material
+  font: false
+  logo: assets/mark.svg
+  favicon: assets/mark.svg
+  palette:
+    primary: custom
+    accent: custom
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+extra_css:
+  - assets/style.css
+extra_javascript:
+  - assets/local-file.js
+nav:
+  - Welcome: index.md
+  - Understand the project:
+      - Detector and light sharing: learn/detector.md
+      - Coordinates and truth: learn/coordinates.md
+      - From light maps to densities: learn/model.md
+  - Local practicals:
+      - 0 · Set up: practicals/setup.md
+      - 1 · Read a light map: practicals/features.md
+      - 2 · Validate the distributions: practicals/validation.md
+      - 3 · Evaluate saved predictions: practicals/predictions.md
+      - 4 · Interpret uncertainty: practicals/uncertainty.md
+      - 5 · Compare point estimators: practicals/estimators.md
+      - 6 · Compare component counts: practicals/components.md
+  - Later extensions: later.md
+  - Reference:
+      - Data and script map: reference/data.md
+      - Geometry and model details: reference/physics.md
+      - Implementation notes: reference/implementation-notes.md
+      - Troubleshooting: reference/troubleshooting.md
+      - Project status and open questions: reference/status.md
+      - Example data checks: reference/data-checks.md
+      - Maintaining this website: reference/maintaining.md

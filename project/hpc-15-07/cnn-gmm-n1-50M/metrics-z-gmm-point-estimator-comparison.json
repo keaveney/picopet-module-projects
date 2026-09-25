@@ -1,0 +1,23 @@
+{
+  "mean": {
+    "outdir": "validation-full-merged-n1-1607/z-gmm-mean",
+    "z_point_prediction": "gmm_mean",
+    "mean_3d_error_mm": 2.2150390532225828,
+    "p68_3d_error_mm": 2.4499392583018498,
+    "p95_3d_error_mm": 5.710504731137749
+  },
+  "median": {
+    "outdir": "validation-full-merged-n1-1607/z-gmm-median",
+    "z_point_prediction": "gmm_median",
+    "mean_3d_error_mm": 2.21503905322272,
+    "p68_3d_error_mm": 2.449939258315225,
+    "p95_3d_error_mm": 5.7105047311474495
+  },
+  "mode": {
+    "outdir": "validation-full-merged-n1-1607/z-gmm-mode",
+    "z_point_prediction": "gmm_mode",
+    "mean_3d_error_mm": 2.2145407334167975,
+    "p68_3d_error_mm": 2.4494241837987962,
+    "p95_3d_error_mm": 5.710504475926175
+  }
+}

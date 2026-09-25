@@ -1,0 +1,64 @@
+# ------------------------------------------------------------
+# Clean paper-style visualisation for GATE / Geant4 Qt viewer
+# ------------------------------------------------------------
+
+# Clear previous view
+/vis/viewer/clear
+/vis/scene/notifyHandlers
+
+# White background
+/vis/viewer/set/background white
+
+# Remove default axes
+/vis/scene/remove/axes
+
+/vis/viewer/clear
+/vis/scene/create paperScene
+/vis/open OGL
+/vis/drawVolume
+/vis/scene/add/trajectories
+/vis/scene/endOfEventAction accumulate 1
+
+/vis/viewer/set/background white
+/vis/viewer/set/viewpointVector 1 0 0
+/vis/viewer/set/upVector 0 0 1
+/vis/viewer/set/projection orthogonal
+/vis/viewer/zoom 1.4
+/vis/viewer/refresh
+
+# Camera projection
+# View approximately in the y-z plane, looking along +x or -x.
+/vis/viewer/set/viewpointVector 1 0 0
+/vis/viewer/set/upVector 0 0 1
+
+# Orthographic projection is best for paper figures
+/vis/viewer/set/projection orthogonal
+
+# Zoom/pan: tune these interactively if needed
+/vis/viewer/zoom 1.7
+/vis/viewer/pan 0 0 cm
+
+# Make geometry edges visible
+/vis/viewer/set/style surface
+/vis/viewer/set/hiddenEdge 1
+/vis/viewer/set/auxiliaryEdge 1
+
+# Smooth trajectories
+/vis/modeling/trajectories/create/drawByParticleID
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts false
+/vis/modeling/trajectories/drawByParticleID-0/default/setLineWidth 2
+
+# Particle colours
+/vis/modeling/trajectories/drawByParticleID-0/set gamma red
+/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton blue
+/vis/modeling/trajectories/drawByParticleID-0/set e- orange
+
+# Keep trajectories from one event visible
+/vis/scene/endOfEventAction accumulate 1
+
+# Optional: show hits if defined
+/vis/scene/add/hits
+
+# Refresh
+/vis/viewer/refresh
+/vis/viewer/flush
