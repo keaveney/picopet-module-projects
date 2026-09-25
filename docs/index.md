@@ -1,6 +1,8 @@
 # PET detector simulation and analysis
 
-This guide is for final-year undergraduate physics students working with Dr James Keaveney at University College Dublin. It covers the simulated response of a scintillator-based PET detector module to 511 keV gamma radiation, including scintillation, optical transport, detected light and interaction-position reconstruction.
+This website is intended for final-year undergraduate physics students working with Dr James Keaveney and Dr. Sean Cournane at University College Dublin on research projects related to the development of novel detector modules for medical Positron Emission Tomography (PET). It is a work in progress and will develop in parallel to the projects themselves.
+
+The main objectives of the website is to provide the minimal intorduction to PET, the low-cost context and need for novel detector concepts before provide a technical guide to setting up, running, and analysing simulations of PET modules using GATE 10 such that student get up to speed quickly. Details of specific resarch projects will not be provided on this site.
 
 The current practicals use supplied datasets and research scripts to introduce the analysis. Instructions for running new simulations and training models will be developed separately; the [later workflows](later.md) describe their requirements and current limitations.
 
